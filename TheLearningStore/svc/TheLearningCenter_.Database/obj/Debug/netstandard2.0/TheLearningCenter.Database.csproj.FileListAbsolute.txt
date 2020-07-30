@@ -1,0 +1,5 @@
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\TheLearningStore\svc\TheLearningCenter.Database\bin\Debug\netstandard2.0\TheLearningCenter.Database.deps.json
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\TheLearningStore\svc\TheLearningCenter.Database\bin\Debug\netstandard2.0\TheLearningCenter.Database.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\TheLearningStore\svc\TheLearningCenter.Database\obj\Debug\netstandard2.0\TheLearningCenter.Database.csprojAssemblyReference.cache
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\TheLearningStore\svc\TheLearningCenter.Database\obj\Debug\netstandard2.0\TheLearningCenter.Database.AssemblyInfoInputs.cache
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\TheLearningStore\svc\TheLearningCenter.Database\obj\Debug\netstandard2.0\TheLearningCenter.Database.AssemblyInfo.cs

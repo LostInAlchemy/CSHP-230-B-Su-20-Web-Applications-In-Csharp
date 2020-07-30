@@ -1,0 +1,29 @@
+﻿@model TheLearningCenter.WebSite.Models.ClassPageModel
+@{
+    ViewBag.Title = "Class List";
+}
+
+<h1>Classes</h1>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        @foreach (var item in Model.Classes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassPrice)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -175,6 +175,10 @@
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TheLearningCenter.Database\TheLearningCenter.Database.csproj">
+      <Project>{33550008-BBFD-463B-9530-0AED7D4BABED}</Project>
+      <Name>TheLearningCenter.Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TheLearningStore.Repository\TheLearningCenter.Repository.csproj">
       <Project>{b8d0e045-053d-4b07-9d9e-968b49bf815e}</Project>
       <Name>TheLearningCenter.Repository</Name>

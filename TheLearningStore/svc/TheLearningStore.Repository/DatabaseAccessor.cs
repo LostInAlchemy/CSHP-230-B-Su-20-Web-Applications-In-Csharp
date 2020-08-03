@@ -4,15 +4,15 @@ namespace TheLearningCenter.Repository
 {
     public class DatabaseAccessor
     {
-        private static readonly Entities2 entities;
+        private static readonly Entities entities;
 
         static DatabaseAccessor()
         {
-            entities = new Entities2();
+            entities = new Entities();
             entities.Database.Connection.Open();
         }
 
-        public static Entities2 Instance
+        public static Entities Instance
         {
             get
             {

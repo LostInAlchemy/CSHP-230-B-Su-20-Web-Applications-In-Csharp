@@ -273,6 +273,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClassModel.cs" />
     <Compile Include="Models\ClassPageModel.cs" />
+    <Compile Include="Models\EnrolledClasses.cs" />
+    <Compile Include="Models\GetUser.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

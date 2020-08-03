@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using TheLearningCenter.Database;
 
 namespace TheLearningCenter.Repository
 {
@@ -7,6 +9,9 @@ namespace TheLearningCenter.Repository
         UserModel LogIn(string userEmail, string userPassword);
         UserModel Register(string userEmail, string userPassword);
         bool UserExist(string userEmail);
+
+        //int GetUser(string userName);
+
     }
 
     public class UserModel
@@ -17,6 +22,8 @@ namespace TheLearningCenter.Repository
 
     public class UserRepository : IUserRepository
     {
+        //public object HttpContext { get; private set; }
+
         public bool UserExist(string userEmail)
         {
             var user = DatabaseAccessor.Instance.Users
@@ -57,5 +64,16 @@ namespace TheLearningCenter.Repository
 
             return new UserModel { Id = user.UserId, Name = user.UserEmail };
         }
+
+
+        //public int GetUser(string userName)
+        //{
+        //    var userId = DatabaseAccessor.Instance.Users
+        //        .Where(t => t.UserEmail == userName)
+        //        .Select(u => u.UserId)
+        //        .FirstOrDefault();
+
+        //    return userId;
+        //}
     }
 }

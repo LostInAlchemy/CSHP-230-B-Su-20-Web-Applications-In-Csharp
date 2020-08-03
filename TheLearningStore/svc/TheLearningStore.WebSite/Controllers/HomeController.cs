@@ -2,6 +2,8 @@
 using TheLearningCenter.WebSite.Models;
 using System.Web.Mvc;
 using TheLearningCenter.Business;
+using Newtonsoft.Json;
+using TheLearningStore.WebSite.Models;
 
 namespace TheLearningCenter.WebSite.Controllers
 {
@@ -138,6 +140,34 @@ namespace TheLearningCenter.WebSite.Controllers
             return View(model);
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //public ActionResult studentclasses()
         //{
         //    var userclasses = classes.Where(t => t.)
@@ -153,11 +183,11 @@ namespace TheLearningCenter.WebSite.Controllers
         //                                    t.ClassDescription,
         //                                    t.ClassPrice
         //                                    )).Where(t => t.)
-                                            
-                                            
-                                            
-                                            
-                                            
+
+
+
+
+
         //                                    .ToArray();
 
         //    var userclasses = classes.Where(t => new TheLearningCenter.WebSite.Models.ClassModel.user = Session.SessionID)

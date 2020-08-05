@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using TheLearningCenter.Business;
 using Newtonsoft.Json;
 using TheLearningStore.WebSite.Models;
+using Ziggle.Business;
 
 namespace TheLearningCenter.WebSite.Controllers
 {
@@ -127,7 +128,7 @@ namespace TheLearningCenter.WebSite.Controllers
         public ActionResult classlist()
         {
             var classes = classManager.Classes
-                                            .Select(t => 
+                                            .Select(t =>
                                             new TheLearningCenter.WebSite.Models.ClassModel
                                             (
                                                 t.ClassID,
@@ -144,14 +145,50 @@ namespace TheLearningCenter.WebSite.Controllers
 
 
 
+        public ActionResult ClassEnrollment()
+        {
+            var classes = classManager.Classes
+                                 .Select(t =>
+                                 new TheLearningCenter.WebSite.Models.ClassModel
+                                 (
+                                     t.ClassID,
+                                 t.ClassName,
+                                 t.ClassDescription,
+                                 t.ClassPrice
+                                 )).ToArray();
+
+            var model = new TheLearningCenter.WebSite.Models.ClassPageModel { Classes = classes };
+            return View(model);
+            //return View();
+        }
+
+        //[Authorize]
+        //public ActionResult ClassEnrollment()
+        //{
+        //    //var user = (TheLearningCenter.WebSite.Models.UserModel)Session["User"];
+        //    //var item = EnrollmentManager.Add(user.UserId, classId);
+
+
+        //    return View();
+        //}
 
 
 
-
-
-
-
-
+        //[Authorize]
+        //public ActionResult StudentClasses()
+        //{
+        //    var user = (TheLearningCenter.WebSite.Models.UserModel)Session["User"];
+        //    var item = EnrollmentManager.Add(user.UserId, classId);
+        //    //var items = EnrollmentManager.GetAll(user.Id)
+        //    //    .Select(t => new Ziggle.WebSite.Models.ShoppingCartItem
+        //    //    {
+        //    //        UserId = t.UserId,
+        //    //        ProductId = t.ProductId,
+        //    //        Quantity = t.Quantity
+        //    //    })
+        //    //    .ToArray();
+        //    //return View(items);
+        //}
 
 
 

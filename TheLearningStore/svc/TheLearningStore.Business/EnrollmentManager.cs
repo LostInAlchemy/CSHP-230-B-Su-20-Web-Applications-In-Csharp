@@ -1,57 +1,55 @@
-﻿//using System.Linq;
-//using TheLearningCenter.Repository;
+﻿using System.Linq;
+using TheLearningCenter.Repository;
 
-//namespace Ziggle.Business
-//{
-//    public interface IEnrollmentManager
-//    {
-//        EnrollmentModel Add(int userId, int classId);
-//        bool Remove(int userId, int classId);
-//        EnrollmentModel[] GetAll(int userId);
-//    }
+namespace Ziggle.Business
+{
+    public interface IEnrollmentManager
+    {
+        bool Add(int userId, int classId);
+        //bool Remove(int userId, int classId);
+        Class[] GetAll(int userId);
+    }
 
-//    public class EnrollmentModel
-//    {
-//        public int UserId { get; set; }
-//        public int ClassId { get; set; }
-//    }
+    public class EnrollmentModel
+    {
+        public int UserId { get; set; }
+        public int ClassId { get; set; }
+    }
 
-//    public class EnrollmentManager : IEnrollmentManager
-//    {
-//        private readonly IEnrollmentRepository enrollmentRepository;
+    public class EnrollmentManager : IEnrollmentManager
+    {
+        private readonly IEnrollmentRepository enrollmentRepository;
 
-//        public EnrollmentManager(IEnrollmentRepository enrollmentRepository)
-//        {
-//            this.enrollmentRepository = enrollmentRepository;
-//        }
+        public EnrollmentManager(IEnrollmentRepository enrollmentRepository)
+        {
+            this.enrollmentRepository = enrollmentRepository;
+        }
 
-//        public EnrollmentModel Add(int userId, int classId)
-//        {
-//            var userclass = enrollmentRepository.Add(userId, classId);
+        public bool Add(int userId, int classId)
+        {
+            var userclass = enrollmentRepository.Add(userId, classId);
 
-//            return new EnrollmentModel
-//            {
-//                UserId = userclass.UserId,
-//                ClassId = userclass.ClassId
-//            };
-//        }
+            return true;
+            //return new EnrollmentModel
+            //{
+            //    UserId = userclass.UserId,
+            //    ClassId = userclass.ClassId
+            //};
+        }
 
-//        public EnrollmentModel[] GetAll(int userId)
-//        {
-//            var items = enrollmentRepository.GetAll(userId)
-//                .Select(t => new EnrollmentModel
-//                {
-//                    UserId = t.UserId,
-//                    ClassId = t.ClassId,
-//                })
-//                .ToArray();
+        public ClassModel[] GetAll(int userId)
+        {
 
-//            return items;
-//        }
+            var EnrolledClasses = enrollmentRepository.GetAll
 
-//        public bool Remove(int userId, int productId)
-//        {
-//            return enrollmentRepository.Remove(userId, productId);
-//        }
-//    }
-//}
+                                          .Select(t => new ClassModel(t.ClassID, t.ClassName, t.ClassDescription, t.ClassPrice))
+                                          .ToArray();
+            return EnrolledClasses;
+        }
+
+        //public bool Remove(int userId, int productId)
+        //{
+        //    return enrollmentRepository.Remove(userId, productId);
+        //}
+    }
+}

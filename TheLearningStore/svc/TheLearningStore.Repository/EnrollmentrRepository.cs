@@ -1,88 +1,89 @@
-﻿//using System.Linq;
-//using TheLearningCenter.Database;
+﻿using System.Linq;
+using TheLearningCenter.Database;
 
-//namespace TheLearningCenter.Repository
-//{
-//    public interface IEnrollmentRepository
-//    {
-//        EnrollmentModel Add(int userId, int classId);
-//        bool Remove(int userId, int classId);
-//        EnrollmentModel[] GetAll(int userId);
-//    }
+namespace TheLearningCenter.Repository
+{
+    public interface IEnrollmentRepository
+    {
+        bool Add(int userId, int classId);
+        //bool Remove(int userId, int classId);
+        Class[] GetAll(int userId);
+    }
 
-//    public class EnrollmentModel
-//    {
-//        public int UserId { get; set; }
-//        public int ClassId { get; set; }
-//    }
+    public class EnrollmentRepository : IEnrollmentRepository
+    {
+        public bool Add(int userId, int classId)
+        {
+            //var userclass = DatabaseAccessor.Instance.Classes.Add(UserModel);
 
-//    public class EnrollmentRepository : IEnrollmentRepository
-//    {
-//        public EnrollmentModel Add(int userId, int classId)
-//        {
-//            var userclass = DatabaseAccessor.Instance.Classes.Add(UserModel);
+            //DatabaseAccessor.Instance.Classes.
 
+            // User.Add(classId);
 
+            //(new EnrollmentModel
+            // {
+            //     UserId = userId,
+            //     ClassId = classId
+            // });
 
-//            // User.Add(classId);
-
-//            //(new EnrollmentModel
-//            // {
-//            //     UserId = userId,
-//            //     ClassId = classId
-//            // });
-
-//            DatabaseAccessor.Instance.SaveChanges();
-
-//            return new EnrollmentModel
-//            {
-//                UserId = userclass.Entity2.UserId,
-//                ClassId = userclass.Entity2.ClassId
-//            };
+            //DatabaseAccessor.Instance.SaveChanges();
 
 
 
+            //return new EnrollmentModel
+            //{
+            //    UserId = userclass.Entity.UserId,
+            //    ClassId = userclass.Entity.ClassId
+            //};
 
 
-//        }
+
+            var newClass = DatabaseAccessor.Instance.Classes.First(t => t.ClassId == classId);
+            var user = DatabaseAccessor.Instance.Users.First(t => t.UserId == userId);
+            user.Classes.Add(newClass);
+            //newClass.Users.Add(user);
 
 
+            return true;
 
 
 
 
+           // return null;
+
+
+        }
 
 
 
-//        public EnrollmentModel[] GetAll(int userId)
-//        {
-//            var classes = DatabaseAccessor.Instance.UserClass
-//                .Where(t => t.UserId == userId)
-//                .Select(t => new EnrollmentModel
-//                {
-//                    UserId = t.UserId,
-//                    ClassId = t.ClassId,
-//                })
-//                .ToArray();
-//            return classes;
-//        }
 
-//        public bool Remove(int userId, int classId)
-//        {
-//            var userClass = DatabaseAccessor.Instance.UserClass
-//                                .Where(t => t.Users.Contains(userId)
-//                                    && t.ClassId == classId);
 
-//            if (userClass.Count() == 0)
-//            {
-//                return false;
-//            }
 
-//            DatabaseAccessor.Instance.UserClass.Remove(userClass.First());
 
-//            DatabaseAccessor.Instance.SaveChanges();
 
-//            return true;
-//        }
-//    }
-//}
+
+        public Class[] GetAll(int userId)
+        {
+            var user = DatabaseAccessor.Instance.Users.First(t => t.UserId == userId);
+            return user.Classes.ToArray();
+        }
+
+        //public bool Remove(int userId, int classId)
+        //{
+        //    var userClass = DatabaseAccessor.Instance.Users
+        //                        .Where(t => t.Users.Contains(userId)
+        //                            && t.Classes.Contains(classId);
+
+        //    if (userClass.Count() == 0)
+        //    {
+        //        return false;
+        //    }
+
+        //    DatabaseAccessor.Instance.Users.Remove(userClass.First());
+
+        //    DatabaseAccessor.Instance.SaveChanges();
+
+        //    return true;
+        //}
+    }
+}

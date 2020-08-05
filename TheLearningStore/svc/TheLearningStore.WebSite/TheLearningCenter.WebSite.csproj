@@ -271,6 +271,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ClassEnrollmentModel.cs" />
     <Compile Include="Models\ClassModel.cs" />
     <Compile Include="Models\ClassPageModel.cs" />
     <Compile Include="Models\EnrolledClasses.cs" />
@@ -342,6 +343,8 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\LogIn.cshtml" />
     <Content Include="Views\Home\classlist.cshtml" />
+    <Content Include="Views\Home\ClassEnrollment.cshtml" />
+    <Content Include="Views\Home\StudentClasses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

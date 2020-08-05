@@ -37,3 +37,42 @@ E:\CSHP 230 B Su 20 Web Applications In Csharp\CSHP-230-B-Su-20-Web-Applications
 E:\CSHP 230 B Su 20 Web Applications In Csharp\CSHP-230-B-Su-20-Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Ziggle.Repository.dll.config
 E:\CSHP 230 B Su 20 Web Applications In Csharp\CSHP-230-B-Su-20-Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\EntityFramework.SqlServer.dll
 E:\CSHP 230 B Su 20 Web Applications In Csharp\CSHP-230-B-Su-20-Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Ziggle.Repository.dll.config
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Ziggle.Repository.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Ziggle.Repository.pdb
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Autofac.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Autofac.Integration.Mvc.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\EntityFramework.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\EntityFramework.SqlServer.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.Helpers.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.Mvc.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.Razor.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.WebPages.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.WebPages.Razor.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Ziggle.ProductDatabase.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Ziggle.ProductDatabase.pdb
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Ziggle.ProductDatabase.dll.config
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Autofac.pdb
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Autofac.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Autofac.Integration.Mvc.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\EntityFramework.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.Helpers.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.Mvc.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.Razor.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.WebPages.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\bin\Debug\System.Web.WebPages.Razor.xml
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\obj\Debug\Ziggle.Repository.csprojAssemblyReference.cache
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\obj\Debug\Ziggle.Repository.csproj.CoreCompileInputs.cache
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\obj\Debug\Ziggle.Repository.csproj.CopyComplete
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\obj\Debug\Ziggle.Repository.dll
+E:\CSHP 230 B Su 20\Web-Applications-In-Csharp\WebStore\src\Ziggle.Repository\obj\Debug\Ziggle.Repository.pdb

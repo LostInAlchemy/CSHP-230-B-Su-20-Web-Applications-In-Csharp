@@ -20,5 +20,11 @@ namespace TheLearningCenter.WebSite.Models
             ClassDescription = classDescription;
             ClassPrice = classPrice;
         }
+
+        public ClassModel(int classID, string className)
+        {
+            ClassId = classID;
+            ClassName = className;
+        }
     }
 }

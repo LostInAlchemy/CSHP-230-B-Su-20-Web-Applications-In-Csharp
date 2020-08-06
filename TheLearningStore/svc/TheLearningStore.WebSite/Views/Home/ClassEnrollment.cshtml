@@ -1,73 +1,11 @@
-﻿@model TheLearningCenter.WebSite.Models.ClassEnrollmentModel
-@*@model TheLearningCenter.WebSite.Models.ClassModel*@
+﻿@model TheLearningCenter.WebSite.Models.ClassEnrollmentViewModel
 
+<h2>Enroll In Class</h2>
 
+@Html.DropDownList("classList", ViewBag.classes as SelectList, "Select Class")
 
-@*@{
-        ViewBag.Title = "Enroll In Class";
-    }
-
-
-    <div class="row">
-        <div>
-            <h1>Enroll In Class</h1>
-        </div>
-        <div class="col-md-4">
-            <select class="form-control" id="Classes" name="Classes">
-                    <option>Select Class</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                </select>
-            @Html.DropDownListFor(ClassPageModel => ClassPageModel, )
-        </div>
-
-
-
-        <div class="col-md-5">
-            <button>Add Class</button>
-
-        </div>
-
-    </div>
-
-
-    @model TheLearningCenter.WebSite.Models.ClassPageModel
-    @{
-        ViewBag.Title = "Enroll In Class";
-    }
-
-
-    <div class="row">
-        <Html>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-        </tr>
-        @foreach (var item in Model.Classes)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ClassName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ClassDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ClassPrice)
-                </td>
-            </tr>
-        }
-    </Html>
-    </div>*@
-
-
-
-@Html.LabelFor(m => m.SelectedClassId)
-@Html.DropDownListFor(m => m.SelectedClassId, Model.ClassItems)
-@Html.ValidationMessageFor(m => m.SelectedClassId)
-<input type="submit" value="Submit" />
-
+@*<input type="submit" value="Submit" />*@
+<button id="button1" runat="server" onserverclick="doIt" >Add Class</button>
 
 
 
@@ -75,5 +13,11 @@
 @*https://stackoverflow.com/questions/36198809/dropdownlist-with-foreach-loop-in-c-sharp-mvc
 
 
-https://odetocode.com/blogs/scott/archive/2013/03/11/dropdownlistfor-with-asp-net-mvc.aspx*@
+    https://odetocode.com/blogs/scott/archive/2013/03/11/dropdownlistfor-with-asp-net-mvc.aspx
 
+
+
+
+http://www.codingfusion.com/Post/Dropdownlist-example-in-asp-net
+
+https://stackoverflow.com/questions/7227510/what-is-the-right-way-to-populate-a-dropdownlist-from-a-database/18116273*@

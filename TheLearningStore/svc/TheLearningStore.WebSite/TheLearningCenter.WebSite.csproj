@@ -271,10 +271,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\ClassEnrollmentModel.cs" />
+    <Compile Include="Models\ClassEnrollmentViewModel.cs" />
     <Compile Include="Models\ClassModel.cs" />
     <Compile Include="Models\ClassPageModel.cs" />
-    <Compile Include="Models\EnrolledClasses.cs" />
+    <Compile Include="Models\EnrollmentModel.cs" />
     <Compile Include="Models\GetUser.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -283,6 +283,7 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="TheLearningCenter\WebSite\Models\EnrollmentModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

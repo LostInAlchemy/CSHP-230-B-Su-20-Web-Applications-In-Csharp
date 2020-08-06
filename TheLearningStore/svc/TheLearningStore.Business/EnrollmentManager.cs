@@ -1,13 +1,13 @@
 ﻿using System.Linq;
 using TheLearningCenter.Repository;
 
-namespace Ziggle.Business
+namespace TheLearningCenter.Business
 {
     public interface IEnrollmentManager
     {
         bool Add(int userId, int classId);
         //bool Remove(int userId, int classId);
-        Class[] GetAll(int userId);
+        //ClassModel[] GetAll(int userId);
     }
 
     public class EnrollmentModel
@@ -37,15 +37,15 @@ namespace Ziggle.Business
             //};
         }
 
-        public ClassModel[] GetAll(int userId)
-        {
+        //public ClassModel[] GetAll(int userId)
+        //{
 
-            var EnrolledClasses = enrollmentRepository.GetAll
+        //    var EnrolledClasses = enrollmentRepository.GetAll
 
-                                          .Select(t => new ClassModel(t.ClassID, t.ClassName, t.ClassDescription, t.ClassPrice))
-                                          .ToArray();
-            return EnrolledClasses;
-        }
+        //                                  .Select(t => new ClassModel(t.ClassID, t.ClassName, t.ClassDescription, t.ClassPrice))
+        //                                  .ToArray();
+        //    return EnrolledClasses;
+        //}
 
         //public bool Remove(int userId, int productId)
         //{

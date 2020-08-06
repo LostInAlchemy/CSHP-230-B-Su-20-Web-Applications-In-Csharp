@@ -4,7 +4,6 @@ using System.Web.Mvc;
 using TheLearningCenter.Business;
 using Newtonsoft.Json;
 using TheLearningStore.WebSite.Models;
-using Ziggle.Business;
 
 namespace TheLearningCenter.WebSite.Controllers
 {
@@ -145,28 +144,37 @@ namespace TheLearningCenter.WebSite.Controllers
 
 
 
+
+
+
+
+
+  
         public ActionResult ClassEnrollment()
         {
             var classes = classManager.Classes
-                                 .Select(t =>
-                                 new TheLearningCenter.WebSite.Models.ClassModel
-                                 (
-                                     t.ClassID,
-                                 t.ClassName,
-                                 t.ClassDescription,
-                                 t.ClassPrice
-                                 )).ToArray();
+                                    .Select(t =>
+                                    new TheLearningCenter.WebSite.Models.ClassModel
+                                    (
+                                        t.ClassID,
+                                    t.ClassName,
+                                    t.ClassDescription,
+                                    t.ClassPrice
+                                    )).ToList();
 
-            var model = new TheLearningCenter.WebSite.Models.ClassPageModel { Classes = classes };
-            return View(model);
-            //return View();
+            SelectList listItems = new SelectList(classes, "classId", "className");
+            ViewBag.classes = listItems;
+
+            return View();
         }
 
+
+        //[HttpGet]
         //[Authorize]
         //public ActionResult ClassEnrollment()
         //{
-        //    //var user = (TheLearningCenter.WebSite.Models.UserModel)Session["User"];
-        //    //var item = EnrollmentManager.Add(user.UserId, classId);
+        //    var user = (TheLearningCenter.WebSite.Models.UserModel)Session["User"];
+        //    var item = EnrollmentManager.Add(user.UserId, classId);
 
 
         //    return View();

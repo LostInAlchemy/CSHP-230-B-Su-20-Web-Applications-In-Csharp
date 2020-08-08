@@ -5,9 +5,8 @@ namespace TheLearningCenter.Business
 {
     public interface IEnrollmentManager
     {
-        bool Add(int userId, int classId);
-        //bool Remove(int userId, int classId);
-        //ClassModel[] GetAll(int userId);
+        EnrollmentModel Add(int userId, int classId);
+        ClassModel[] GetAll(int userId);
     }
 
     public class EnrollmentModel
@@ -25,31 +24,18 @@ namespace TheLearningCenter.Business
             this.enrollmentRepository = enrollmentRepository;
         }
 
-        public bool Add(int userId, int classId)
+        public EnrollmentModel Add(int userId, int classId)
         {
             var userclass = enrollmentRepository.Add(userId, classId);
 
-            return true;
-            //return new EnrollmentModel
-            //{
-            //    UserId = userclass.UserId,
-            //    ClassId = userclass.ClassId
-            //};
+            return new EnrollmentModel { UserId = userclass.UserId, ClassId = userclass.ClassID };
         }
 
-        //public ClassModel[] GetAll(int userId)
-        //{
-
-        //    var EnrolledClasses = enrollmentRepository.GetAll
-
-        //                                  .Select(t => new ClassModel(t.ClassID, t.ClassName, t.ClassDescription, t.ClassPrice))
-        //                                  .ToArray();
-        //    return EnrolledClasses;
-        //}
-
-        //public bool Remove(int userId, int productId)
-        //{
-        //    return enrollmentRepository.Remove(userId, productId);
-        //}
+        public ClassModel[] GetAll(int userId)
+        {
+            return enrollmentRepository.GetAll(userId)
+                              .Select(t => new ClassModel(t.ClassId, t.ClassName, t.ClassDescription, t.ClassPrice))
+                              .ToArray();
+        }
     }
 }

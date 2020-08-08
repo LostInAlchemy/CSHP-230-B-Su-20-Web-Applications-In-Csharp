@@ -2,8 +2,7 @@
 using TheLearningCenter.WebSite.Models;
 using System.Web.Mvc;
 using TheLearningCenter.Business;
-using Newtonsoft.Json;
-using TheLearningStore.WebSite.Models;
+using System.Web.UI.WebControls;
 
 namespace TheLearningCenter.WebSite.Controllers
 {
@@ -11,11 +10,13 @@ namespace TheLearningCenter.WebSite.Controllers
     {
         private readonly IClassManager classManager;
         private readonly IUserManager userManager;
+        private readonly IEnrollmentManager enrollmentManager;
 
-        public HomeController(IClassManager classManager, IUserManager userManager)
+        public HomeController(IClassManager classManager, IUserManager userManager, IEnrollmentManager enrollmentManager)
         {
             this.classManager = classManager;
             this.userManager = userManager;
+            this.enrollmentManager = enrollmentManager;
         }
 
         public ActionResult Index()
@@ -38,7 +39,7 @@ namespace TheLearningCenter.WebSite.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -76,7 +77,6 @@ namespace TheLearningCenter.WebSite.Controllers
                     }
                 }
             }
-
 
             // If we got this far, something failed, redisplay form
             return View(registerModel);
@@ -129,8 +129,7 @@ namespace TheLearningCenter.WebSite.Controllers
             var classes = classManager.Classes
                                             .Select(t =>
                                             new TheLearningCenter.WebSite.Models.ClassModel
-                                            (
-                                                t.ClassID,
+                                            (t.ClassID,
                                             t.ClassName,
                                             t.ClassDescription,
                                             t.ClassPrice
@@ -140,17 +139,25 @@ namespace TheLearningCenter.WebSite.Controllers
             return View(model);
         }
 
-
-
-
-
-
-
-
-
-
-  
         public ActionResult ClassEnrollment()
+        {
+            var classes = classManager.Classes
+                                    .Select(t =>
+                                    new TheLearningCenter.WebSite.Models.ClassModel
+                                    (t.ClassID,
+                                    t.ClassName,
+                                    t.ClassDescription,
+                                    t.ClassPrice
+                                    )).ToList();
+
+            SelectList listItems = new SelectList(classes, "classId", "className");
+            ViewBag.classes = listItems;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ClassEnrollment(TheLearningStore.WebSite.Models.ClassEnrollmentViewModel classEnrollmentViewModel)
         {
             var classes = classManager.Classes
                                     .Select(t =>
@@ -165,82 +172,44 @@ namespace TheLearningCenter.WebSite.Controllers
             SelectList listItems = new SelectList(classes, "classId", "className");
             ViewBag.classes = listItems;
 
+            if (Session["User"] == null)
+            {
+                Response.Redirect("~/Home/LogIn");
+            }
+            else
+            {
+                var currentUserId = (TheLearningCenter.WebSite.Models.UserModel)Session["User"];
+                var selectedClass = int.Parse(Request.Form["classList"]);
+                var Enrolled = enrollmentManager.Add(currentUserId.UserId, selectedClass);
+
+                return RedirectToAction("StudentClasses", "Home", Enrolled);
+            }
+
             return View();
         }
 
+        public ActionResult studentclasses()
+        {
+            var currentUserId = (TheLearningCenter.WebSite.Models.UserModel)Session["User"];
 
-        //[HttpGet]
-        //[Authorize]
-        //public ActionResult ClassEnrollment()
-        //{
-        //    var user = (TheLearningCenter.WebSite.Models.UserModel)Session["User"];
-        //    var item = EnrollmentManager.Add(user.UserId, classId);
+            if (Session["User"] != null)
+            {
+                var classes = enrollmentManager.GetAll(currentUserId.UserId)
+                                     .Select(t =>
+                                     new TheLearningCenter.WebSite.Models.ClassModel
+                                     (
+                                         t.ClassID,
+                                     t.ClassName,
+                                     t.ClassDescription,
+                                     t.ClassPrice
+                                     )).ToArray();
 
+                var model = new TheLearningCenter.WebSite.Models.ClassPageModel { Classes = classes };
 
-        //    return View();
-        //}
+                return View(model);
+            }
 
-
-
-        //[Authorize]
-        //public ActionResult StudentClasses()
-        //{
-        //    var user = (TheLearningCenter.WebSite.Models.UserModel)Session["User"];
-        //    var item = EnrollmentManager.Add(user.UserId, classId);
-        //    //var items = EnrollmentManager.GetAll(user.Id)
-        //    //    .Select(t => new Ziggle.WebSite.Models.ShoppingCartItem
-        //    //    {
-        //    //        UserId = t.UserId,
-        //    //        ProductId = t.ProductId,
-        //    //        Quantity = t.Quantity
-        //    //    })
-        //    //    .ToArray();
-        //    //return View(items);
-        //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //public ActionResult studentclasses()
-        //{
-        //    var userclasses = classes.Where(t => t.)
-
-
-
-        //    var classes = classManager.Classes
-        //                                    .Select(t =>
-        //                                    new TheLearningCenter.WebSite.Models.ClassModel
-        //                                    (
-        //                                        t.ClassID,
-        //                                    t.ClassName,
-        //                                    t.ClassDescription,
-        //                                    t.ClassPrice
-        //                                    )).Where(t => t.)
-
-
-
-
-
-        //                                    .ToArray();
-
-        //    var userclasses = classes.Where(t => new TheLearningCenter.WebSite.Models.ClassModel.user = Session.SessionID)
-
-        //    var model = new TheLearningCenter.WebSite.Models.ClassPageModel { Classes = classes };
-        //    return View(model);
-        //}
-
-
+            return RedirectToAction("Login");
+        }
     }
 }

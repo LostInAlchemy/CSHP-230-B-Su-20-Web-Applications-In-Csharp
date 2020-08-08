@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using TheLearningCenter.Database;
+﻿using System.Linq;
 
 namespace TheLearningCenter.Repository
 {
@@ -9,9 +7,6 @@ namespace TheLearningCenter.Repository
         UserModel LogIn(string userEmail, string userPassword);
         UserModel Register(string userEmail, string userPassword);
         bool UserExist(string userEmail);
-
-        //int GetUser(string userName);
-
     }
 
     public class UserModel
@@ -22,12 +17,10 @@ namespace TheLearningCenter.Repository
 
     public class UserRepository : IUserRepository
     {
-        //public object HttpContext { get; private set; }
-
         public bool UserExist(string userEmail)
         {
             var user = DatabaseAccessor.Instance.Users
-    .FirstOrDefault(t => t.UserEmail.ToLower() == userEmail.ToLower());
+                                       .FirstOrDefault(t => t.UserEmail.ToLower() == userEmail.ToLower());
 
             if (user != null)
             {
@@ -40,8 +33,8 @@ namespace TheLearningCenter.Repository
         public UserModel LogIn(string userEmail, string userPassword)
         {
             var user = DatabaseAccessor.Instance.Users
-                .FirstOrDefault(t => t.UserEmail.ToLower() == userEmail.ToLower()
-                                      && t.UserPassword == userPassword);
+                                       .FirstOrDefault(t => t.UserEmail.ToLower() == userEmail.ToLower()
+                                                         && t.UserPassword == userPassword);
 
             if (user == null)
             {
@@ -64,16 +57,5 @@ namespace TheLearningCenter.Repository
 
             return new UserModel { Id = user.UserId, Name = user.UserEmail };
         }
-
-
-        //public int GetUser(string userName)
-        //{
-        //    var userId = DatabaseAccessor.Instance.Users
-        //        .Where(t => t.UserEmail == userName)
-        //        .Select(u => u.UserId)
-        //        .FirstOrDefault();
-
-        //    return userId;
-        //}
     }
 }

@@ -1,23 +1,15 @@
-﻿@model TheLearningCenter.WebSite.Models.ClassEnrollmentViewModel
+﻿<h2>Enroll In Class</h2>
 
-<h2>Enroll In Class</h2>
+<div class="row">
+    <div class="col-md-8">
+        <section id="enrollMe">
 
-@Html.DropDownList("classList", ViewBag.classes as SelectList, "Select Class")
+            @using (Html.BeginForm("ClassEnrollment", "Home", FormMethod.Post))
+             {
+                @Html.DropDownList("classList", ViewBag.classes as SelectList, "Select Class")
 
-@*<input type="submit" value="Submit" />*@
-<button id="button1" runat="server" onserverclick="doIt" >Add Class</button>
-
-
-
-
-@*https://stackoverflow.com/questions/36198809/dropdownlist-with-foreach-loop-in-c-sharp-mvc
-
-
-    https://odetocode.com/blogs/scott/archive/2013/03/11/dropdownlistfor-with-asp-net-mvc.aspx
-
-
-
-
-http://www.codingfusion.com/Post/Dropdownlist-example-in-asp-net
-
-https://stackoverflow.com/questions/7227510/what-is-the-right-way-to-populate-a-dropdownlist-from-a-database/18116273*@
+                <input type="submit" value="Add Class" class="btn btn-default" />
+             }
+        </section>
+    </div>
+</div>

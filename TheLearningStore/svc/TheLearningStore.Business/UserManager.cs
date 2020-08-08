@@ -1,5 +1,4 @@
-﻿using System.Text;
-using TheLearningCenter.Repository;
+﻿using TheLearningCenter.Repository;
 
 namespace TheLearningCenter.Business
 {
@@ -8,9 +7,6 @@ namespace TheLearningCenter.Business
         UserModel LogIn(string userEmail, string userPassword);
         UserModel Register(string userEmail, string userPassword);
         bool UserExist(string userEmail);
-
-        //int GetUser(string userName);
-
     }
 
     public class UserModel
@@ -62,12 +58,5 @@ namespace TheLearningCenter.Business
 
             return new UserModel { Id = user.Id, Name = user.Name };
         }
-
-        //public int GetUser(string userName)
-        //{
-        //    var userId = UserRepository.GetUser(userName);
-
-        //    return userId;
-        //}
     }
 }

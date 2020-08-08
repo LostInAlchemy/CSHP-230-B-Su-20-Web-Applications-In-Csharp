@@ -1,43 +1,26 @@
-﻿@model IEnumerable<TheLearningCenter.WebSite.Models.ClassModel>
+﻿@model TheLearningCenter.WebSite.Models.ClassPageModel
 
 @{
-    ViewBag.Title = "AddToCart";
+    ViewBag.Title = "studentclasses";
 }
 
-<h2>AddToCart</h2>
+<h2>Student Classes</h2>
 
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(ClassModel => ClassModel.ClassId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(ClassModel => ClassModel.ClassDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(ClassModel => ClassModel.ClassPrice)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in EnrolledClasses)
-    {
+    @if (Model.Classes !=null)
+        { foreach (var item in Model.Classes)
+        {
         <tr>
             <td>
-                @Html.DisplayFor(EnrolledClasses => item.UserId)
+                @Html.DisplayFor(modelItem => item.ClassName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProductId)
+                @Html.DisplayFor(modelItem => item.ClassDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.DisplayFor(modelItem => item.ClassPrice)
             </td>
         </tr>
-    }
+    }}
 
 </table>

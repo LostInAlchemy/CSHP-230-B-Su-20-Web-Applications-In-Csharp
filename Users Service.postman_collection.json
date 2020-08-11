@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "2098e27e-2027-4123-bab0-6d91b2d9e272",
+		"name": "Users Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{ContactService}}/api/contacts",
+					"protocol": "http",
+					"host": [
+						"{{ContactService}}"
+					],
+					"path": [
+						"api",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Contact",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{UserService}}/api/users/101",
+					"protocol": "http",
+					"host": [
+						"{{UserService}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"101"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Email\": \"dave@dave\",\r\n  \"Password\": \"dave@dave\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{UserService}}/api/users",
+					"protocol": "http",
+					"host": [
+						"{{UserService}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Specific Contact",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{UserService}}/api/users/101",
+					"protocol": "http",
+					"host": [
+						"{{UserService}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mod Specific Contact",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Email\": \"dave@Jim\",\r\n  \"Password\": \"dave@Jim\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{UserService}}/api/users/101",
+					"protocol": "http",
+					"host": [
+						"{{UserService}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"101"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

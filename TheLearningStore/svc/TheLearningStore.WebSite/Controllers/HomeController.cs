@@ -156,6 +156,7 @@ namespace TheLearningCenter.WebSite.Controllers
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult ClassEnrollment(TheLearningStore.WebSite.Models.ClassEnrollmentViewModel classEnrollmentViewModel)
         {
@@ -172,20 +173,11 @@ namespace TheLearningCenter.WebSite.Controllers
             SelectList listItems = new SelectList(classes, "classId", "className");
             ViewBag.classes = listItems;
 
-            if (Session["User"] == null)
-            {
-                Response.Redirect("~/Home/LogIn");
-            }
-            else
-            {
                 var currentUserId = (TheLearningCenter.WebSite.Models.UserModel)Session["User"];
                 var selectedClass = int.Parse(Request.Form["classList"]);
                 var Enrolled = enrollmentManager.Add(currentUserId.UserId, selectedClass);
 
                 return RedirectToAction("StudentClasses", "Home", Enrolled);
-            }
-
-            return View();
         }
 
         public ActionResult studentclasses()

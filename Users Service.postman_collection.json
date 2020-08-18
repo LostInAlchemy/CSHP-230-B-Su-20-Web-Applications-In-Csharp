@@ -17,14 +17,14 @@
 					}
 				],
 				"url": {
-					"raw": "http://{{ContactService}}/api/contacts",
+					"raw": "http://{{UserService}}/api/users",
 					"protocol": "http",
 					"host": [
-						"{{ContactService}}"
+						"{{UserService}}"
 					],
 					"path": [
 						"api",
-						"contacts"
+						"users"
 					]
 				}
 			},
@@ -77,7 +77,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"Email\": \"dave@dave\",\r\n  \"Password\": \"dave@dave\"\r\n}",
+					"raw": "{\r\n  \"Email\": \"dave@dave\",\r\n  \"Password\": \"dave\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

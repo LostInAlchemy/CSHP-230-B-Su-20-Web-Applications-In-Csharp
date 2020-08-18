@@ -4,6 +4,16 @@
     "E:\\CSHP 230 B Su 20\\Web-Applications-In-Csharp\\RESTServiceProject\\RESTServiceProject\\RESTServiceProject.csproj": {}
   },
   "projects": {
+    "E:\\CSHP 230 B Su 20\\Web-Applications-In-Csharp\\RESTServiceProject\\PasswordEncryption\\PasswordEncryption.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\CSHP 230 B Su 20\\Web-Applications-In-Csharp\\RESTServiceProject\\PasswordEncryption\\PasswordEncryption.csproj",
+        "projectName": "PasswordEncryption",
+        "projectPath": "E:\\CSHP 230 B Su 20\\Web-Applications-In-Csharp\\RESTServiceProject\\PasswordEncryption\\PasswordEncryption.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "E:\\CSHP 230 B Su 20\\Web-Applications-In-Csharp\\RESTServiceProject\\RESTServiceProject\\RESTServiceProject.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +41,11 @@
         },
         "frameworks": {
           "netcoreapp2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\CSHP 230 B Su 20\\Web-Applications-In-Csharp\\RESTServiceProject\\PasswordEncryption\\PasswordEncryption.csproj": {
+                "projectPath": "E:\\CSHP 230 B Su 20\\Web-Applications-In-Csharp\\RESTServiceProject\\PasswordEncryption\\PasswordEncryption.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

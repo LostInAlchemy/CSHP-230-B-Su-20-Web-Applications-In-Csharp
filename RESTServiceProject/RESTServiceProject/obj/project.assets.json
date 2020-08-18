@@ -4333,6 +4333,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "PasswordEncryption/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/PasswordEncryption.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PasswordEncryption.dll": {}
+        }
       }
     }
   },
@@ -11870,13 +11879,19 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "PasswordEncryption/1.0.0": {
+      "type": "project",
+      "path": "../PasswordEncryption/PasswordEncryption.csproj",
+      "msbuildProject": "../PasswordEncryption/PasswordEncryption.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "PasswordEncryption >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -11911,7 +11926,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\CSHP 230 B Su 20\\Web-Applications-In-Csharp\\RESTServiceProject\\PasswordEncryption\\PasswordEncryption.csproj": {
+              "projectPath": "E:\\CSHP 230 B Su 20\\Web-Applications-In-Csharp\\RESTServiceProject\\PasswordEncryption\\PasswordEncryption.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

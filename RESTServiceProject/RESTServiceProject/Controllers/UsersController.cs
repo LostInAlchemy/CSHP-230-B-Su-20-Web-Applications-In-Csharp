@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PasswordEncryption;
 using RESTServiceProject.Models;
 
 namespace RESTServiceProject.Controllers
@@ -13,7 +13,6 @@ namespace RESTServiceProject.Controllers
     {
         public static List<UserModel> users = new List<UserModel>();
         public static int CurrentId = 101;
-
 
         // GET: api/<UsersController>
         [HttpGet]
@@ -39,11 +38,10 @@ namespace RESTServiceProject.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] UserModel value)
         {
-            if (value == null)
-            {
-                return new BadRequestResult();
-            }
+            UserPWEncryption userPWEncryption = new UserPWEncryption();
 
+            string valuePWEncrypt = userPWEncryption.PasswordHashSalt(value.Password);
+            value.Password = valuePWEncrypt;
             value.DateAdded = DateTime.Now;
             value.Id = CurrentId++;
             users.Add(value);
@@ -52,31 +50,28 @@ namespace RESTServiceProject.Controllers
             return CreatedAtAction(nameof(Get), new { id = value.Id }, value);
         }
 
-
-
-
         // PUT api/<UsersController>/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] UserModel value)
         {
+            UserPWEncryption userPWEncryption = new UserPWEncryption();
+
             if (users.FirstOrDefault(t => t.Id == id) != null)
             {
                 var modifyUser = users.FirstOrDefault(t => t.Id == id);
+
+                string valuePWEncrypt = userPWEncryption.PasswordHashSalt(value.Password);
+                value.Password = valuePWEncrypt;
 
                 modifyUser.Id = id;
                 modifyUser.Email = value.Email;
                 modifyUser.Password = value.Password;
 
-                //modifyContact = value;
-                return Ok(users);
+                return Ok(Get(id));
             }
 
             return NotFound();
         }
-
-
-
-
 
         // DELETE api/<UsersController>/5
         [HttpDelete("{id}")]
@@ -86,7 +81,6 @@ namespace RESTServiceProject.Controllers
             {
                 var removeContact = users.Where(t => t.Id == id);
                 users.Remove(removeContact.First());
-
                 //contacts.RemoveAll(t => t.Id == id);
 
                 return Content(String.Format("{0} deleted", id.ToString()));
